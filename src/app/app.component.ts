@@ -4,6 +4,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+
+import * as firebase from 'firebase';
+
+var config = {
+  apiKey: "AIzaSyCMcx1hjBbo3WpmJEh3AN13caPxJRW1KMg",
+  authDomain: "easyarkit.firebaseapp.com",
+  databaseURL: "https://easyarkit.firebaseio.com",
+  projectId: "easyarkit",
+  storageBucket: "easyarkit.appspot.com",
+  messagingSenderId: "967378795705"
+};
+
+
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -17,6 +31,7 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+    firebase.initializeApp(config);
   }
 }
 
